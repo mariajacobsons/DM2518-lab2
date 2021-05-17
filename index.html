@@ -6,90 +6,50 @@
       rel="stylesheet"
       href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"
     />
-    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js">
+    </script>
   </head>
   <body>
-    <ons-splitter>
-      <ons-splitter-side id="menu" collapse width="25%">
-        <ons-page id="about">
-          <ons-toolbar>
-            <div class="center">About</div>
-            <div class="right">
-              <ons-back-button></ons-back-button>
-            </div>
-          </ons-toolbar>
-          <p style="margin:10px">
-        Welcome to Rest and Relaxation application! 
-        </br>
-        </br>
-        We are Nike and Maria, two lab partners who like to chillax.
-        </br>
-        </br>
-        Click on any card on the homescreen to get your relaxation exercise. Enjoy!
-        </p>
-        </ons-page>
-      </ons-splitter-side>
-
-      <ons-splitter-content>
+ 
         <ons-navigator id="navigator" page="home.html"></ons-navigator>
 
         <script>
-          const openMenu = () => {
-            document.querySelector("#menu").open();
-          };
+        const openPage = (page) => {
+          document.getElementById('navigator').pushPage(page.id);
+        }
         </script>
 
         <template id="home.html">
           <ons-page id="home">
             <ons-toolbar id="home-toolbar">
               <div class="center">Homepage</div>
-              <div class="left">
-                <div class="left">
-                  <ons-toolbar-button onclick="openMenu()">
-                    <ons-icon icon="md-menu"></ons-icon>
-                  </ons-toolbar-button>
-                </div>
-              </div>
             </ons-toolbar>
 
-            <script>
-                const openExercise = (page) => {
-                    document.getElementById('navigator').pushPage(page.id, { data: { title: page.title } });
-                }
-              </script>
-
             <div style="text-align: center; margin-top: 10px">
+
               <div style="height: 125px; padding: 1px 0 0 0">
-                <div class="card" onclick="openExercise(exercise1)">
+                <div class="card" onclick="openPage(exercise1)">
                   <h2 class="card__title">Exercise 1</h2>
                   <div class="card__content">This is the first exercise.</div>
                 </div>
             </div>
 
-            <script>
-                const openExercise = (page) => {
-                    document.getElementById('navigator').pushPage(page.id, { data: { title: page.title } });
-                }
-              </script>
-
               <div style="height: 125px; padding: 1px 0 0 0">
-                <div class="card" onclick="openExercise(exercise2)">
+                <div class="card" onclick="openPage(exercise2)">
                   <h2 class="card__title">Exercise 2</h2>
                   <div class="card__content">This is the second exercise.</div>
                 </div>
               </div>
 
-              <script>
-                const openExercise = (page) => {
-                    document.getElementById('navigator').pushPage(page.id, { data: { title: page.title } });
-                }
-              </script>
-
               <div style="height: 125px; padding: 1px 0 0 0">
-                <div class="card" onclick="openExercise(exercise3)">
+                <div class="card" onclick="openPage(exercise3)">
                   <h2 class="card__title">Exercise 3</h2>
                   <div class="card__content">This is the third exercise.</div>
                 </div>
+              </div>
+
+              <div>
+                <button onclick="openPage(about)">About</button>
               </div>
             </div>
           </ons-page>
@@ -104,6 +64,8 @@
             </div>
           </ons-toolbar>
           <div>
+            <img src="./img/feet.jpg" style="width: 100%"></img>
+            <a href='https://www.freepik.com/vectors/people' style="font-size:9px">People vector created by freepik - www.freepik.com</a>
             <ul>
               <li>Stand on your feet.</li>
               <li>Experience the contact with the ground.</li>
@@ -129,6 +91,8 @@
                 </div>
               </ons-toolbar>
               <div>
+                <img src="./img/shoulders.jpg" style="width: 100%"></img>
+                <a href='https://www.freepik.com/vectors/people' style="font-size:9px">People vector created by freepik - www.freepik.com</a>
                 <ul>
                   <li>Let your arms hang loose.</li>
                   <li>Become aware of the shoulders.</li>
@@ -142,7 +106,7 @@
           </ons-page>
         </template>
 
-        <template id="exercise2">
+        <template id="exercise3">
           <ons-page>
             <ons-toolbar>
                 <div class="center">Feel Your Face</div>
@@ -151,6 +115,8 @@
                 </div>
               </ons-toolbar>
               <div>
+                <img src="./img/face.jpg" style="width: 100%"></img>
+                <a href='https://www.freepik.com/vectors/man' style="font-size:9px">Man vector created by vectorjuice - www.freepik.com</a>
                 <ul>
                   <li>Become aware of your face.</li>
                   <li>Feel the forehead.</li>
@@ -169,7 +135,26 @@
               </div>
           </ons-page>
         </template>
-      </ons-splitter-content>
-    </ons-splitter>
+
+        <template id="about">
+        <ons-page>
+          <ons-toolbar>
+            <div class="center">About</div>
+            <div class="right">
+              <ons-back-button></ons-back-button>
+            </div>
+          </ons-toolbar>
+          <p style="margin:10px">
+        Welcome to Rest and Relaxation application! 
+        </br>
+        </br>
+        We are Nike and Maria, two lab partners who like to chillax.
+        </br>
+        </br>
+        Click on any card on the homescreen to get your relaxation exercise. Enjoy!
+        </p>
+        </ons-page>
+      </template>
+  
   </body>
 </html>
