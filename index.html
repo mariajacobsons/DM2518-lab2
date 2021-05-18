@@ -10,59 +10,48 @@
     </script>
   </head>
   <body>
- 
-        <ons-navigator id="navigator" page="home.html"></ons-navigator>
+    
+    <ons-page>
+      <ons-toolbar id="home-toolbar">
+        <div class="center">About</div>
+      </ons-toolbar>
+      <ons-tabbar swipeable position="auto">
+        <ons-tab page="about.html" label="About" icon="ion-ios-home, material:md-home" active>
+        </ons-tab>
+        <ons-tab page="exercise1.html" label="Feel your feet" icon="md-favorite" active-icon="md-favorite">
+        </ons-tab>
+        <ons-tab page="exercise2.html" label="Feel your shoulders" icon="md-account" active-icon="md-account">
+        </ons-tab>
+        <ons-tab page="exercise3.html" label="Feel your face" icon="md-face" active-icon="md-face">
+        </ons-tab>
+      </ons-tabbar>
+    </ons-page>
+        
 
         <script>
-        const openPage = (page) => {
-          document.getElementById('navigator').pushPage(page.id);
-        }
+        document.addEventListener('prechange', function(event) {
+          document.querySelector('ons-toolbar .center')
+            .innerHTML = event.tabItem.getAttribute('label');
+        });
         </script>
 
-        <template id="home.html">
-          <ons-page id="home">
-            <ons-toolbar id="home-toolbar">
-              <div class="center">Homepage</div>
-            </ons-toolbar>
+        <template id="about.html">
+          <ons-page id="about">
 
-            <div style="text-align: center; margin-top: 10px">
-
-              <div style="height: 125px; padding: 1px 0 0 0">
-                <div class="card" onclick="openPage(exercise1)">
-                  <h2 class="card__title">Feel Your Feet</h2>
-                  <div class="card__content">An exercise to ground you through your feet.</div>
-                </div>
-            </div>
-
-              <div style="height: 125px; padding: 1px 0 0 0">
-                <div class="card" onclick="openPage(exercise2)">
-                  <h2 class="card__title">Feel Your Shoulders</h2>
-                  <div class="card__content">Ease the tension in your shoulders.</div>
-                </div>
-              </div>
-
-              <div style="height: 125px; padding: 1px 0 0 0">
-                <div class="card" onclick="openPage(exercise3)">
-                  <h2 class="card__title">Feel Your Face</h2>
-                  <div class="card__content">Relax the face muscles.</div>
-                </div>
-              </div>
-
-              <div>
-                <button onclick="openPage(about)">About</button>
-              </div>
-            </div>
+            <p style="margin:10px">
+              Welcome to Rest and Relaxation application! 
+              </br>
+              </br>
+              We are Nike and Maria, two lab partners who like to chillax.
+              </br>
+              </br>
+              Click on any card on the homescreen to get your relaxation exercise. Enjoy!
+              </p>
           </ons-page>
         </template>
 
-        <template id="exercise1">
+        <template id="exercise1.html">
           <ons-page>
-            <ons-toolbar>
-            <div class="center">Feel Your Feet</div>
-            <div class="right">
-              <ons-back-button></ons-back-button>
-            </div>
-          </ons-toolbar>
           <div>
             <img src="./img/feet.jpg" style="width: 100%"></img>
             <a href='https://www.freepik.com/vectors/people' style="font-size:9px">People vector created by freepik - www.freepik.com</a>
@@ -82,14 +71,8 @@
           </ons-page>
         </template>
 
-        <template id="exercise2">
+        <template id="exercise2.html">
           <ons-page>
-            <ons-toolbar>
-                <div class="center">Feel Your Shoulders</div>
-                <div class="right">
-                  <ons-back-button></ons-back-button>
-                </div>
-              </ons-toolbar>
               <div>
                 <img src="./img/shoulders.jpg" style="width: 100%"></img>
                 <a href='https://www.freepik.com/vectors/people' style="font-size:9px">People vector created by freepik - www.freepik.com</a>
@@ -106,14 +89,8 @@
           </ons-page>
         </template>
 
-        <template id="exercise3">
+        <template id="exercise3.html">
           <ons-page>
-            <ons-toolbar>
-                <div class="center">Feel Your Face</div>
-                <div class="right">
-                  <ons-back-button></ons-back-button>
-                </div>
-              </ons-toolbar>
               <div>
                 <img src="./img/face.jpg" style="width: 100%"></img>
                 <a href='https://www.freepik.com/vectors/man' style="font-size:9px">Man vector created by vectorjuice - www.freepik.com</a>
@@ -135,26 +112,6 @@
               </div>
           </ons-page>
         </template>
-
-        <template id="about">
-        <ons-page>
-          <ons-toolbar>
-            <div class="center">About</div>
-            <div class="right">
-              <ons-back-button></ons-back-button>
-            </div>
-          </ons-toolbar>
-          <p style="margin:10px">
-        Welcome to Rest and Relaxation application! 
-        </br>
-        </br>
-        We are Nike and Maria, two lab partners who like to chillax.
-        </br>
-        </br>
-        Click on any card on the homescreen to get your relaxation exercise. Enjoy!
-        </p>
-        </ons-page>
-      </template>
   
   </body>
 </html>
