@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css" />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/onsenui/css/onsen-css-components.min.css"
+      href="https://unpkg.com/onsenui/css/dark-onsen-css-components.css"  
     />
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js">
     </script>
@@ -12,7 +12,7 @@
   <body>
     
     <ons-page>
-      <ons-toolbar id="home-toolbar">
+      <ons-toolbar id="home-toolbar" style="background-color: cadetblue;">
         <div class="center">About</div>
       </ons-toolbar>
       <ons-tabbar swipeable position="auto">
@@ -38,6 +38,8 @@
         <template id="about.html">
           <ons-page id="about">
 
+            <div style="text-align: center; margin-top: 75px">
+
             <p style="margin:10px">
               Welcome to Rest and Relaxation application! 
               </br>
@@ -45,8 +47,9 @@
               We are Nike and Maria, two lab partners who like to chillax.
               </br>
               </br>
-              Click on any card on the homescreen to get your relaxation exercise. Enjoy!
+              Click on any icon in the tab bar to get your relaxation exercise. Enjoy!
               </p>
+            </div>
           </ons-page>
         </template>
 
@@ -54,8 +57,8 @@
           <ons-page>
           <div>
             <img src="./img/feet.jpg" style="width: 100%"></img>
-            <a href='https://www.freepik.com/vectors/people' style="font-size:9px">People vector created by freepik - www.freepik.com</a>
-            <ul>
+            <a href='https://www.freepik.com/vectors/people' style="font-size:9px; color:cadetblue">People vector created by freepik - www.freepik.com</a>
+            <ul style="font-size: x-large;">
               <li>Stand on your feet.</li>
               <li>Experience the contact with the ground.</li>
               <li>Feel into the soles of the feet.</li>
@@ -75,8 +78,8 @@
           <ons-page>
               <div>
                 <img src="./img/shoulders.jpg" style="width: 100%"></img>
-                <a href='https://www.freepik.com/vectors/people' style="font-size:9px">People vector created by freepik - www.freepik.com</a>
-                <ul>
+                <a href='https://www.freepik.com/vectors/people' style="font-size:9px; color:cadetblue">People vector created by freepik - www.freepik.com</a>
+                <ul style="font-size: x-large;">
                   <li>Let your arms hang loose.</li>
                   <li>Become aware of the shoulders.</li>
                   <li>Slightly lift one shoulder and release it.</li>
@@ -93,8 +96,8 @@
           <ons-page>
               <div>
                 <img src="./img/face.jpg" style="width: 100%"></img>
-                <a href='https://www.freepik.com/vectors/man' style="font-size:9px">Man vector created by vectorjuice - www.freepik.com</a>
-                <ul>
+                <a href='https://www.freepik.com/vectors/man' style="font-size:9px; color:cadetblue">Man vector created by vectorjuice - www.freepik.com</a>
+                <ul style="font-size: x-large;">
                   <li>Become aware of your face.</li>
                   <li>Feel the forehead.</li>
                   <li>The eyebrows.</li>
